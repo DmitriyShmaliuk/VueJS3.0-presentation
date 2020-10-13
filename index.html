@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css" />
+    <link rel="stylesheet" href="highlight/styles/vs2015.css">
+    <script src="highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <style>
+      .shower {
+        --slide-ratio: calc(16 / 9);
+      }
+
+      .slide {
+        background: #333743;
+      }
+
+      .shower.full .progress {
+        display: none;
+      }
+
+      .slide-description-image {
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body class="shower list">
+    <header class="caption">
+      <h1>Vue JS 3.0 What's new?</h1>
+      <p>GeekSpace 2020</p>
+    </header>
+
+    <section class="slide" id="cover">
+      <h2><span class="green">Vue JS</span> 3.0 What's new?</h2>
+      <div class="additional-info">
+        <p>by Dmytro Shmaliuk<br />GeekSpace 2020</p>
+      </div>
+      <figure>
+        <img class="cover" src="pictures/start-page.jpg" alt="Vue JS 3.0" />
+      </figure>
+      <style>
+        .cover {
+          max-height: unset;
+        }
+
+        #cover h2 {
+          width: 100%;
+          margin: 215px 0 0;
+          color: white;
+          text-align: center;
+          font-size: 48px;
+          font-family: Roboto;
+          font-weight: 400;
+        }
+
+        #cover p {
+          margin: 0px;
+          text-align: center;
+          color: white;
+          font-size: 20px;
+        }
+
+        .green {
+          color: #41b783;
+        }
+
+        .additional-info {
+          margin-top: 5px;
+        }
+
+        .additional-info p {
+          line-height: 1.4;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide24">
+      <h2>Навіщо переписувати?</h2>
+
+      <style>
+        #slide24 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0px;
+        }
+
+        #slide24 h2 {
+          font-size: 48px;
+          font-weight: 400;
+          font-family: Roboto;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide25">
+      <h2>Використання нових мовних функцій - перeхід на Proxy</h2>
+
+      <style>
+        #slide25 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0px;
+        }
+
+        #slide25 h2 {
+          font-size: 48px;
+          font-weight: 400;
+          font-family: Roboto;
+          text-align: center;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide26">
+      <h2>Rendering 3000 stateful component instances</h2>
+      <figure>
+        <img src="./pictures/proxy.png" alt="proxy is faster" />
+      </figure>
+
+      <style>
+        #sldie26 {
+          padding: 0px;
+        }
+
+        #slide26 figure {
+          position: absolute;
+          top: 50px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        #slide26 img {
+          width: 750px;
+        }
+
+        .slide {
+          color: #dcdde0;
+        }
+
+        .slide h2 {
+          color: #cbcbcb;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide26">
+      <h2>Рішення архітектурних проблем</h2>
+
+      <ul>
+        <li>Подолання вузького місця віртуального DOM</li>
+        <li>Мінімізація розміру пакета</li>
+      </ul>
+    </section>
+
+    <section class="slide" id="slide27">
+      <img src="./pictures/what-is-new.png" alt="what-is-new" />
+
+      <style>
+        #slide27 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0px;
+        }
+
+        #slide27 img {
+          width: 570px;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide19">
+      <style>
+        #slide19 {
+          background: url("./pictures/composition-api.jpg") no-repeat;
+          background-size: 100% 100%;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide21">
+      <div>
+        <h2>Підтримка <b>Type</b>Script</h2>
+        <h3>Чому <b>Type</b>Script?</h3>
+      </div>
+
+      <style>
+        #slide21 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          padding: 0px;
+        }
+
+        #slide21 h2 {
+          text-align: center;
+          font-size: 48px;
+          font-family: Roboto;
+          font-weight: 400;
+          margin: 0;
+        }
+
+        #slide21 h2 b {
+          font-weight: 500;
+          color: #009dff;
+        }
+
+        #slide21 h3 {
+          text-align: center;
+          font-weight: 400;
+          margin: 0;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide22">
+      <h2>Чому <b>Type</b>Script?</h2>
+      <ol>
+        <li>
+          Cистема типізації дуже корисна для проекту такого масштабу як Vue
+        </li>
+        <li>Користувачі все частіше використовують Vue і TypeScript разом.</li>
+        <li>Підтримка інтегрованих середовищ розробки (IDE).</li>
+      </ol>
+    </section>
+
+    <section class="slide" id="slide23">
+      <h2>Visual Studio Code</h2>
+      <img src="pictures/ide-support.png" alt="ide-support" />
+
+      <style>
+        #slide23 img {
+          width: 850px;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide13">
+      <style>
+        #slide13 {
+          background: url("./pictures/teleport.jpg") no-repeat;
+          background-size: 100% 100%;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide14">
+      <pre>
+        <code>&lt;template></code>
+        <code>  &lt;li&gt;</code>
+        <code>    &lt;v-modal-window&gt;&lt;/v-modal-window&gt;</code>
+        <code>  &lt;/li&gt;</code>
+        <code>  &lt;li&gt;</code>
+        <code>    &lt;v-modal-window&gt;&lt;/v-modal-window&gt;</code>
+        <code>  &lt;/li&gt;</code>
+        <code>  &lt;li&gt;</code>
+        <code>    &lt;v-modal-window&gt;&lt;/v-modal-window&gt;</code>
+        <code>  &lt;/li&gt;</code>
+        <code>&lt;/ol&gt;</code>
+        <code>&lt;/template&gt;</code>
+      </pre>
+
+      <style>
+        #slide14 {
+          font-size: 0.8em;
+        }
+      </style>
+    </section>
+
+    <section class="slide">
+      <pre>
+        <code>&lt;template&gt;</code>
+        <code>  &lt;button @click="isShow = true">Open window&lt;/button&gt;</code>
+        <code>  &lt;div class="modal" v-if="isShow"&gt;</code>
+        <code>    &lt;div class="modal-content"&gt;</code>
+        <code>      &lt;p>Some content text&lt;/p&gt;</code>
+        <code>      &lt;button @click="isShow = false">Close&lt;/button&gt;</code>
+        <code>    &lt;/div&gt;</code>
+        <code>  &lt;/div&gt;</code>
+        <code>&lt;/template&gt;</code>
+      </pre>
+    </section>
+
+    <section class="slide" id="slide16">
+      <figure>
+        <img src="./pictures/dom-1.png" alt="dom-1" />
+      </figure>
+
+      <figure>
+        <img src="./pictures/dom-2.png" alt="dom-2" />
+      </figure>
+
+      <style>
+        #slide16 {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          padding-top: 0px;
+        }
+
+        #slide16 figure {
+          display: flex;
+          justify-content: center;
+          flex-basis: 49%;
+          height: 510px;
+        }
+
+        #slide16 figure img {
+          height: 100%;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide17">
+      <pre>
+        <code>&lt;template&gt;</code>
+        <code>  &lt;button @click="isShow = true">Open window&lt;/button&gt;</code>
+        <code>  &lt;teleport to="body"&gt;</code>
+        <code>    &lt;div class="modal" v-if="isShow"&gt;</code>
+        <code>      &lt;div class="modal-content"&gt;</code>
+        <code>        &lt;p>Some content text&lt;/p&gt;</code>
+        <code>        &lt;button @click="isShow = false">Close&lt;/button&gt;</code>
+        <code>      &lt;/div&gt;</code>
+        <code>    &lt;/div&gt;</code>
+        <code>  &lt;/teleport&gt;</code>
+        <code>&lt;/template&gt;</code>
+      </pre>
+
+      <style>
+        #slide17 {
+          font-size: 0.9em;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide28">
+      <h2>Fragment</h2>
+
+      <pre>
+        <code>&lt;template&gt;</code>
+        <code>  &lt;p&gt;First element in root&lt;/p&gt;</code>
+        <code>  &lt;p&gt;Second element in root&lt;/p&gt;</code>
+        <code>  &lt;p&gt;Third element in root&lt;/p&gt;</code>
+        <code>  &lt;p&gt;Fourth element in root&lt;/p&gt;</code>
+        <code>&lt;/template&gt;</code>
+      </pre>
+    </section>
+
+    <section class="slide" id="slide29">
+      <h2>Зміни в налаштуванні і монтуванні (Vue2)</h2>
+
+      <pre>
+        <code>import Vue from 'vue'</code>
+        <code>import App from './App.vue'</code>
+        <code> </code>
+        <code>Vue.config.ignoredElements = [/^app-/]</code>
+        <code>Vue.use(/* ... */)</code>
+        <code>Vue.mixin(/* ... */)</code>
+        <code>Vue.component(/* ... */)</code>
+        <code>Vue.directive(/* ... */)</code>
+        <code></code>
+        <code>new Vue({</code>
+        <code>  render: h => h(App)</code>
+        <code>}).$mount('#app')</code>
+      </pre>
+
+      <style>
+        #slide29 code {
+          font-size: 18px;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide30">
+      <h2>Зміни в налаштуванні і монтуванні (Vue3)</h2>
+
+      <pre>
+        <code>import { createApp } from 'vue'</code>
+        <code>import App from './App.vue'</code>
+        <code> </code>
+        <code>const app = createApp(App)</code>
+        <code></code>
+        <code>app.config.ignoredElements = [/^app-/]</code>
+        <code>app.use(/* ... */)</code>
+        <code>app.mixin(/* ... */)</code>
+        <code>app.component(/* ... */)</code>
+        <code>app.directive(/* ... */)</code>
+        <code></code>
+        <code>app.mount('#app')</code>
+      </pre>
+
+      <style>
+        #slide30 code {
+          font-size: 18px;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide15">
+      <h2>Other features</h2>
+      <div class="content">
+        <ol>
+          <li>Script setup</li>
+          <li>Script vars</li>
+        </ol>
+
+        <figure>
+          <img src="./pictures/benefits.jpg" alt="benefits" />
+        </figure>
+      </div>
+
+      <style>
+        #slide15 .content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        #slide15 .content figure {
+          flex-basis: 49%;
+        }
+
+        #slide15 figure img {
+          width: 100%;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide32">
+      <h2>Script setup</h2>
+
+      <div class="content">
+        <div>
+          <pre><code>&lt;script&gt;</code>
+            <code>import { ref } from "vue";</code>
+            <code>export default {</code>
+            <code>  setup() {</code>
+            <code>    const isShow = ref(false);</code>
+            <code>    return {</code>
+            <code>      isShow,</code>
+            <code>    };</code>
+            <code>  },</code>
+            <code>};</code>
+            <code>&lt;/script&gt;</code>
+          </pre>
+        </div>
+        <div>
+          <pre>
+            <code>&lt;script setup&gt;</code>
+            <code>  import { ref } from "vue";</code>
+            <code>  export const isShow = ref(false);</code>
+            <code>&lt;/script&gt;</code>
+          </pre>
+        </div>
+      </div>
+
+      <style>
+        #slide32 .content {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+
+        #slide32 .content> * {
+          flex-basis: 50%;
+        }
+
+        #slide32 code {
+          font-size: 18px;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide33">
+      <h2>Script vars</h2>
+
+      <pre>
+        <code>&lt;template&gt;</code>
+        <code>  &lt;div class="text"&gt;hello&lt;/div&gt;</code>
+        <code>&lt;/template&gt;</code>
+        <code>&lt;script&gt;</code>
+        <code>export default {</code>
+        <code>  data() {</code>
+        <code>    return {</code>
+        <code>      color: 'red'</code>
+        <code>    }</code>
+        <code>  }</code>
+        <code>}</code>
+        <code> &lt;/script&gt;</code>
+        <code></code>
+        <code>&lt;style vars="{ color }"&gt;</code>
+        <code>.text {</code>
+        <code>  color: var(--color);</code>
+        <code>}</code>
+        <code>&lt;/style&gt;</code>
+      </pre>
+
+      <style>
+         #slide33 code {
+          font-size: 12px;
+        }
+      </style>
+      </style>
+    </section>
+
+    <section class="slide" id="slide20">
+      <h2>Дякую за увагу</h2>
+
+      <style>
+        #slide20 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0;
+        }
+      </style>
+    </section>
+
+    <script src="shower/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+  </body>
+
+  <script>
+    function changeState({ currentTarget }) {
+      const figure = currentTarget.querySelectorAll("figure")[0];
+      if (figure.classList.contains("active-first")) {
+        figure.classList.add("active-second");
+        figure.classList.remove("active-first");
+      } else if (figure.classList.contains("active-second")) {
+        figure.classList.add("active-first");
+        figure.classList.remove("active-second");
+      }
+    }
+
+    const slide5 = document.getElementById("slide5");
+    slide5.addEventListener("click", changeState, false);
+  </script>
+</html>
