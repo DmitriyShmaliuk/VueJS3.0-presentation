@@ -5,9 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css" />
-    <link rel="stylesheet" href="highlight/styles/vs2015.css">
+    <link rel="stylesheet" href="highlight/styles/vs2015.css" />
     <script src="highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
 
     <style>
       .shower {
@@ -33,9 +35,30 @@
       .slide pre code.green {
         background-color: #025207;
       }
-      
+
       .slide pre code.blue {
         background-color: #00459e;
+      }
+
+      #slide1 .green {
+        color: #41b783;
+      }
+
+      #slide25 .content,
+      #slide26 .content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      #slide25 .content > *,
+      #slide26 .content > * {
+        flex-basis: 50%;
+      }
+
+      #slide25 code,
+      #slide26 code {
+        font-size: 16px;
       }
     </style>
   </head>
@@ -45,7 +68,7 @@
       <p>GeekSpace 2020</p>
     </header>
 
-    <section class="slide" id="cover">
+    <section class="slide" id="slide1">
       <h2><span class="green">Vue JS</span> 3.0 What's new?</h2>
       <div class="additional-info">
         <p>by Dmytro Shmaliuk<br />GeekSpace 2020</p>
@@ -58,7 +81,7 @@
           max-height: unset;
         }
 
-        #cover h2 {
+        #slide1 h2 {
           width: 100%;
           margin: 215px 0 0;
           color: white;
@@ -68,39 +91,32 @@
           font-weight: 400;
         }
 
-        #cover p {
-          margin: 0px;
-          text-align: center;
-          color: white;
-          font-size: 20px;
-        }
-
-        .green {
-          color: #41b783;
-        }
-
-        .additional-info {
+        #slide1 .additional-info {
           margin-top: 5px;
         }
 
-        .additional-info p {
+        #slide1 .additional-info p {
+          margin: 0px;
+          text-align: center;
+          font-size: 20px;
           line-height: 1.4;
+          color: white;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide24">
+    <section class="slide" id="slide2">
       <h2>Навіщо переписувати?</h2>
 
       <style>
-        #slide24 {
+        #slide2 {
           display: flex;
           justify-content: center;
           align-items: center;
           padding: 0px;
         }
 
-        #slide24 h2 {
+        #slide2 h2 {
           font-size: 48px;
           font-weight: 400;
           font-family: Roboto;
@@ -108,18 +124,18 @@
       </style>
     </section>
 
-    <section class="slide" id="slide25">
+    <section class="slide" id="slide3">
       <h2>Використання нових мовних функцій - перeхід на Proxy</h2>
 
       <style>
-        #slide25 {
+        #slide3 {
           display: flex;
           justify-content: center;
           align-items: center;
           padding: 0px;
         }
 
-        #slide25 h2 {
+        #slide3 h2 {
           font-size: 48px;
           font-weight: 400;
           font-family: Roboto;
@@ -128,18 +144,14 @@
       </style>
     </section>
 
-    <section class="slide" id="slide26">
+    <section class="slide" id="slide4">
       <h2>Rendering 3000 stateful component instances</h2>
       <figure>
         <img src="./pictures/proxy.png" alt="proxy is faster" />
       </figure>
 
       <style>
-        #sldie26 {
-          padding: 0px;
-        }
-
-        #slide26 figure {
+        #slide4 figure {
           position: absolute;
           top: 50px;
           left: 0px;
@@ -150,7 +162,7 @@
           align-items: center;
         }
 
-        #slide26 img {
+        #slide4 img {
           width: 750px;
         }
 
@@ -164,7 +176,7 @@
       </style>
     </section>
 
-    <section class="slide" id="slide26">
+    <section class="slide" id="slide5">
       <h2>Рішення архітектурних проблем</h2>
 
       <ul>
@@ -173,34 +185,34 @@
       </ul>
     </section>
 
-    <section class="slide" id="slide27">
+    <section class="slide" id="slide6">
       <img src="./pictures/what-is-new.png" alt="what-is-new" />
 
       <style>
-        #slide27 {
+        #slide6 {
           display: flex;
           justify-content: center;
           align-items: center;
           padding: 0px;
         }
 
-        #slide27 img {
+        #slide6 img {
           width: 570px;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide19">
+    <section class="slide" id="slide7">
       <style>
-        #slide19 {
+        #slide7 {
           background: url("./pictures/composition-api.jpg") no-repeat;
           background-size: 100% 100%;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide34">
-      <h2>Як виглядає?</h2> 
+    <section class="slide" id="slide8">
+      <h2>Як виглядає?</h2>
       <pre>
         <code>export default {</code>
         <code>  setup(props, context) {</code>
@@ -208,31 +220,31 @@
         <code>      return {}</code>
         <code>  }</code>
         <code>}</code>
-      </pre>     
+      </pre>
     </section>
 
-    <section class="slide" id="slide34">
-      <h2>Як використовувати?</h2> 
+    <section class="slide" id="slide9">
+      <h2>Як використовувати?</h2>
       <ol>
         <li>data -> ref() або reactive()</li>
         <li>computed -> computed()</li>
         <li>watch -> watch() або watchEffect()</li>
-        <li>beforeMount -> onBeforeMount
+        <li>beforeMount -> onBeforeMount</li>
         <li>mounted -> onMounted</li>
         <li>beforeUpdate -> onBeforeUpdate</li>
         <li>updated -> onUpdated</li>
         <li>...</li>
         <li>context</li>
-      </ol>  
+      </ol>
 
       <style>
-        #slide34 {
+        #slide9 {
           font-size: 0.85em;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide35">
+    <section class="slide" id="slide10">
       <h2>Composition API на прикладі Imagestock (Vue2)</h2>
       <pre>
         <code>export default {</code>
@@ -249,13 +261,13 @@
       </pre>
 
       <style>
-        #slide35 code {
+        #slide10 code {
           font-size: 14px;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide36">
+    <section class="slide" id="slide11">
       <pre>
           <code>  computed:{</code>
           <code class="blue">      ...mapState(['images']),</code>
@@ -277,13 +289,13 @@
       </pre>
 
       <style>
-        #slide36 code {
+        #slide11 code {
           font-size: 14px;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide37">
+    <section class="slide" id="slide12">
       <h2>Composition API на прикладі Imagestock (Vue3)</h2>
 
       <pre>
@@ -303,20 +315,20 @@
       </pre>
 
       <style>
-        #slide37 code {
+        #slide12 code {
           font-size: 14px;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide21">
+    <section class="slide" id="slide13">
       <div>
         <h2>Підтримка <b>Type</b>Script</h2>
         <h3>Чому <b>Type</b>Script?</h3>
       </div>
 
       <style>
-        #slide21 {
+        #slide13 {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -324,7 +336,7 @@
           padding: 0px;
         }
 
-        #slide21 h2 {
+        #slide13 h2 {
           text-align: center;
           font-size: 48px;
           font-family: Roboto;
@@ -332,12 +344,12 @@
           margin: 0;
         }
 
-        #slide21 h2 b {
+        #slide13 h2 b {
           font-weight: 500;
           color: #009dff;
         }
 
-        #slide21 h3 {
+        #slide13 h3 {
           text-align: center;
           font-weight: 400;
           margin: 0;
@@ -345,38 +357,38 @@
       </style>
     </section>
 
-    <section class="slide" id="slide22">
+    <section class="slide" id="slide14">
       <h2>Чому <b>Type</b>Script?</h2>
       <ol>
         <li>
-          Cистема типізації дуже корисна для проекту такого масштабу як Vue
+          Cистема типізації дуже корисна для проекту такого масштабу як Vue.
         </li>
         <li>Користувачі все частіше використовують Vue і TypeScript разом.</li>
         <li>Підтримка інтегрованих середовищ розробки (IDE).</li>
       </ol>
     </section>
 
-    <section class="slide" id="slide23">
+    <section class="slide" id="slide15">
       <h2>Visual Studio Code</h2>
       <img src="pictures/ide-support.png" alt="ide-support" />
 
       <style>
-        #slide23 img {
+        #slide15 img {
           width: 850px;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide13">
+    <section class="slide" id="slide16">
       <style>
-        #slide13 {
+        #slide16 {
           background: url("./pictures/teleport.jpg") no-repeat;
           background-size: 100% 100%;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide14">
+    <section class="slide" id="slide17">
       <pre>
         <code>&lt;template></code>
         <code>  &lt;li&gt;</code>
@@ -393,13 +405,13 @@
       </pre>
 
       <style>
-        #slide14 {
+        #slide17 {
           font-size: 0.8em;
         }
       </style>
     </section>
 
-    <section class="slide">
+    <section class="slide" id="slide18">
       <pre>
         <code>&lt;template&gt;</code>
         <code>  &lt;button @click="isShow = true">Open window&lt;/button&gt;</code>
@@ -413,7 +425,7 @@
       </pre>
     </section>
 
-    <section class="slide" id="slide16">
+    <section class="slide" id="slide19">
       <figure>
         <img src="./pictures/dom-1.png" alt="dom-1" />
       </figure>
@@ -423,28 +435,27 @@
       </figure>
 
       <style>
-        #slide16 {
+        #slide19 {
           display: flex;
           justify-content: space-between;
           align-items: center;
-
           padding-top: 0px;
         }
 
-        #slide16 figure {
+        #slide19 figure {
           display: flex;
           justify-content: center;
           flex-basis: 49%;
           height: 510px;
         }
 
-        #slide16 figure img {
+        #slide19 figure img {
           height: 100%;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide17">
+    <section class="slide" id="slide27">
       <pre>
         <code>&lt;template&gt;</code>
         <code>  &lt;button @click="isShow = true">Open window&lt;/button&gt;</code>
@@ -460,13 +471,13 @@
       </pre>
 
       <style>
-        #slide17 {
+        #slide27 {
           font-size: 0.9em;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide28">
+    <section class="slide" id="slide21">
       <h2>Fragment</h2>
 
       <pre>
@@ -479,7 +490,7 @@
       </pre>
     </section>
 
-    <section class="slide" id="slide29">
+    <section class="slide" id="slide22">
       <h2>Зміни в налаштуванні і монтуванні (Vue2)</h2>
 
       <pre>
@@ -498,13 +509,13 @@
       </pre>
 
       <style>
-        #slide29 code {
+        #slide22 code {
           font-size: 18px;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide30">
+    <section class="slide" id="slide23">
       <h2>Зміни в налаштуванні і монтуванні (Vue3)</h2>
 
       <pre>
@@ -523,13 +534,13 @@
       </pre>
 
       <style>
-        #slide30 code {
+        #slide23 code {
           font-size: 18px;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide15">
+    <section class="slide" id="slide24">
       <h2>Other features</h2>
       <div class="content">
         <ol>
@@ -543,23 +554,23 @@
       </div>
 
       <style>
-        #slide15 .content {
+        #slide24 .content {
           display: flex;
           justify-content: space-between;
           align-items: center;
         }
 
-        #slide15 .content figure {
+        #slide24 .content figure {
           flex-basis: 49%;
         }
 
-        #slide15 figure img {
+        #slide24 figure img {
           width: 100%;
         }
       </style>
     </section>
 
-    <section class="slide" id="slide32">
+    <section class="slide" id="slide25">
       <h2>Script setup</h2>
 
       <div class="content">
@@ -586,61 +597,47 @@
           </pre>
         </div>
       </div>
-
-      <style>
-        #slide32 .content {
-          display: flex;
-          justify-content: space-between;
-          flex-wrap: wrap;
-        }
-
-        #slide32 .content> * {
-          flex-basis: 50%;
-        }
-
-        #slide32 code {
-          font-size: 18px;
-        }
-      </style>
     </section>
 
-    <section class="slide" id="slide33">
+    <section class="slide" id="slide26">
       <h2>Script vars</h2>
 
-      <pre>
-        <code>&lt;template&gt;</code>
-        <code>  &lt;div class="text"&gt;hello&lt;/div&gt;</code>
-        <code>&lt;/template&gt;</code>
-        <code>&lt;script&gt;</code>
-        <code>export default {</code>
-        <code>  data() {</code>
-        <code>    return {</code>
-        <code>      color: 'red'</code>
-        <code>    }</code>
-        <code>  }</code>
-        <code>}</code>
-        <code> &lt;/script&gt;</code>
-        <code></code>
-        <code>&lt;style vars="{ color }"&gt;</code>
-        <code>.text {</code>
-        <code>  color: var(--color);</code>
-        <code>}</code>
-        <code>&lt;/style&gt;</code>
-      </pre>
+      <div class="content">
+        <div>
+          <pre>
+            <code>&lt;template&gt;</code>
+            <code>  &lt;div class="text"&gt;hello&lt;/div&gt;</code>
+            <code>&lt;/template&gt;</code>
+            <code>&lt;script&gt;</code>
+            <code>export default {</code>
+            <code>  data() {</code>
+            <code>    return {</code>
+            <code>      color: 'red'</code>
+            <code>    }</code>
+            <code>  }</code>
+            <code>}</code>
+            <code> &lt;/script&gt;</code>
+            <code></code>
+          </pre>
+        </div>
 
-      <style>
-         #slide33 code {
-          font-size: 12px;
-        }
-      </style>
-      </style>
+        <div>
+          <pre>
+            <code>&lt;style vars="{ color }"&gt;</code>
+            <code>.text {</code>
+            <code>  color: var(--color);</code>
+            <code>}</code>
+            <code>&lt;/style&gt;</code>
+          </pre>
+        </div>
+      </div>
     </section>
 
-    <section class="slide" id="slide20">
+    <section class="slide" id="slide27">
       <h2>Дякую за увагу</h2>
 
       <style>
-        #slide20 {
+        #slide27 {
           display: flex;
           justify-content: center;
           align-items: center;
