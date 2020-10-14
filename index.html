@@ -25,6 +25,18 @@
       .slide-description-image {
         width: 400px;
       }
+
+      .slide pre code.red {
+        background-color: #c20606;
+      }
+
+      .slide pre code.green {
+        background-color: #025207;
+      }
+      
+      .slide pre code.blue {
+        background-color: #00459e;
+      }
     </style>
   </head>
   <body class="shower list">
@@ -183,6 +195,116 @@
         #slide19 {
           background: url("./pictures/composition-api.jpg") no-repeat;
           background-size: 100% 100%;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide34">
+      <h2>Як виглядає?</h2> 
+      <pre>
+        <code>export default {</code>
+        <code>  setup(props, context) {</code>
+        <code>      //some logic of your component</code>
+        <code>      return {}</code>
+        <code>  }</code>
+        <code>}</code>
+      </pre>     
+    </section>
+
+    <section class="slide" id="slide34">
+      <h2>Як використовувати?</h2> 
+      <ol>
+        <li>data -> ref() або reactive()</li>
+        <li>computed -> computed()</li>
+        <li>watch -> watch() або watchEffect()</li>
+        <li>beforeMount -> onBeforeMount
+        <li>mounted -> onMounted</li>
+        <li>beforeUpdate -> onBeforeUpdate</li>
+        <li>updated -> onUpdated</li>
+        <li>...</li>
+        <li>context</li>
+      </ol>  
+
+      <style>
+        #slide34 {
+          font-size: 0.85em;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide35">
+      <h2>Composition API на прикладі Imagestock (Vue2)</h2>
+      <pre>
+        <code>export default {</code>
+        <code>  name: 'app',</code>
+        <code>  store,</code>
+        <code>  components: {/*registration of components*/},</code>
+        <code>  data() {</code>
+        <code>      return {</code>
+        <code class="red">          isPopupOpened: false,</code>
+        <code class="green">          currentIndex: null,</code>
+        <code>          countGridBlocks: 1,</code>
+        <code>      }</code>
+        <code>  },</code>
+      </pre>
+
+      <style>
+        #slide35 code {
+          font-size: 14px;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide36">
+      <pre>
+          <code>  computed:{</code>
+          <code class="blue">      ...mapState(['images']),</code>
+          <code class="green">      currentObject(){/* ... */},</code>
+          <code>      likeColor(){/* ... */},</code>
+          <code>      disLikeColor(){/* ... */}</code>
+          <code>  },</code>
+          <code class="blue">  created() {/* init storage logic */},</code>
+          <code>  methods:{</code>
+          <code class="green">      ...mapActions(['addImage','setCurrentIndex', 'incrementLikes', 'incrementDislikes', 'addComment']),</code>
+          <code class="blue">      addImageSection(image){/* ... */},</code>
+          <code class="green">      comment({userName, userComment}){/* ... */},</code>
+          <code class="green">      like(){/* ... */},</code>
+          <code class="green">      dislike(){/* ... */},</code>
+          <code class="green">      setCurrentIndex(index){/* ... */},</code>
+          <code class="red">      openPopup(){/* ... */}</code>
+          <code>  }</code>
+          <code> }</code>
+      </pre>
+
+      <style>
+        #slide36 code {
+          font-size: 14px;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="slide37">
+      <h2>Composition API на прикладі Imagestock (Vue3)</h2>
+
+      <pre>
+        <code>setup(props, { root }) {</code>
+        <code>  const countGridBlocks = ref(1);</code>
+        <code class="blue">  const images = computed(() => root.$store.getters.images);</code>
+        <code class="blue">  /* init store logic (similar created hook on Vue2 expample) */</code>
+        <code class="blue">  function addImageSection(image) {/* ... */}</code>
+        <code class="red">  const { opened: isPopupOpened, openPopup } = usePopup();</code>
+        <code class="green">  const { sectionIndex, comment, like, dislike } = useSection();</code>
+        <code class="green">  function setSectionIndex(index) {/* ... */}</code>
+        <code class="green">  const currentSection = computed(/* ... */);</code>
+        <code>  const likeColor = computed(/* ... */);</code>
+        <code>  const dislikeColor = computed(/* ... */);</code>
+        <code>  return {/* ... */}</code>
+        <code>}</code>
+      </pre>
+
+      <style>
+        #slide37 code {
+          font-size: 14px;
         }
       </style>
     </section>
