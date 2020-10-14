@@ -648,13 +648,15 @@
 
     <script>
       // fix for gh-pages
-      const ghPageElement = document.getElementById(
-        "ed-class-translator-listener"
-      );
+      setTimeout(() => {
+        const ghPageElement = document.getElementById(
+          "ed-class-translator-listener"
+        );
 
-      if (ghPageElement) {
-        document.body.removeChild(ghPageElement);
-      }
+        if (ghPageElement) {
+          document.body.removeChild(ghPageElement);
+        }
+      }, 1500);
     </script>
 
     <script src="shower/shower.js"></script>
