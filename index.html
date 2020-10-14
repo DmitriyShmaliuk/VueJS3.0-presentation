@@ -9,6 +9,15 @@
     <script src="highlight/highlight.pack.js"></script>
     <script>
       hljs.initHighlightingOnLoad();
+
+      // fix for gh-pages
+      const ghPageElement = document.getElementById(
+        "ed-class-translator-listener"
+      );
+
+      if (ghPageElement) {
+        document.body.removeChild(ghPageElement);
+      }
     </script>
 
     <style>
@@ -646,19 +655,7 @@
       </style>
     </section>
 
-    <script>
-      // fix for gh-pages
-      const ghPageElement = document.getElementsByClassName(
-        "ed-class-translator-listener"
-      )[0];
-
-      if (ghPageElement) {
-        document.body.removeChild(ghPageElement);
-      }
-    </script>
-
     <script src="shower/shower.js"></script>
-    
     <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
   </body>
 </html>
