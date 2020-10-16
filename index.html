@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Vue JS 3.0 - overview of interesting features</title>
+    <title>Vue JS 3.0 - нові концепції і можливості</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css" />
@@ -74,14 +74,16 @@
   </head>
   <body class="shower full">
     <header class="caption">
-      <h1>Vue JS 3.0 - overview of interesting features</h1>
+      <h1>Vue JS 3.0 - нові концепції і можливості</h1>
       <p>GeekSpace 2020</p>
     </header>
 
     <section class="slide" id="slide1">
-      <h2><span class="green">Vue JS 3.0</span><br/>Overview of interesting features</h2>
+      <h2>
+        <span class="green">Vue JS 3.0</span><br />Нові концепції і можливості
+      </h2>
       <div class="additional-info">
-        <p>by Dmytro Shmaliuk<br />GeekSpace 2020</p>
+        <p>GeekSpace 2020</p>
       </div>
       <figure>
         <img class="cover" src="pictures/start-page.jpg" alt="Vue JS 3.0" />
@@ -111,6 +113,36 @@
           font-size: 20px;
           line-height: 1.4;
           color: white;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="aboutMe">
+      <h2>Про мене:</h2>
+      <div class="content">
+        <ol>
+          <li>Frontend developer у Viseven</li>
+          <li>1 рік у компанії</li>
+          <li>1.5 років в IT</li>
+          <li>Випускник Viseven IT Academy 2019</li>
+          <li>Vue JS, Rivets JS ...</li>
+        </ol>
+
+        <img src="./pictures/me.jpg" alt="me" />
+      </div>
+
+      <style>
+        .content {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .content > * {
+          width: 45%;
+        }
+
+        .content > ol {
+          flex-basis: 48%;
         }
       </style>
     </section>
@@ -155,7 +187,7 @@
     </section>
 
     <section class="slide" id="slide4">
-      <h2>Rendering 3000 stateful component instances</h2>
+      <h2>Рендеринг 3000 екземплярів компонентів з зберіганням стану</h2>
       <figure>
         <img src="./pictures/proxy.png" alt="proxy is faster" />
       </figure>
@@ -163,7 +195,7 @@
       <style>
         #slide4 figure {
           position: absolute;
-          top: 50px;
+          top: 85px;
           left: 0px;
           width: 100%;
           height: 100%;
@@ -191,7 +223,7 @@
 
       <ul>
         <li>Подолання вузького місця віртуального DOM</li>
-        <li>Мінімізація розміру пакета</li>
+        <li>Мінімізація розміру пакета з 23 КБ до 10 КБ</li>
       </ul>
     </section>
 
@@ -389,6 +421,68 @@
       </style>
     </section>
 
+    <section class="slide" id="classAPI">
+      <h2>Class API - альтерантивний синтаксис (відхилений)</h2>
+
+      <style>
+        #classAPI {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          padding: 0px;
+        }
+
+        #classAPI h2 {
+          text-align: center;
+          font-size: 48px;
+          font-family: Roboto;
+          font-weight: 400;
+          margin: 0;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="classAPIExample">
+      <pre>
+          <code>&lt;script&gt;</code>
+          <code>// Define the component in class-style</code>
+          <code>@Component</code>
+          <code>export default class Counter extends Vue {</code>
+          <code>  // Class properties will be component data</code>
+          <code>  count = 0</code>
+          <code></code>
+          <code>  // Methods will be component methods</code>
+          <code>  increment() {</code>
+          <code>    this.count++</code>
+          <code>  }</code>
+          <code>  decrement() {</code>
+          <code>    this.count--</code>
+          <code>  }</code>
+          <code>}</code>
+          <code>&lt;/script&gt;</code>
+      </pre>
+
+      <style>
+        #classAPIExample code {
+          font-size: 16px;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="classAPIIssues">
+      <h2>Class API - недоліки у порівнянні з Composition API</h2>
+
+      <ol>
+        <li>
+          Він погано виконує свою основну задачу (найкраща підтримка
+          TypeScript).
+        </li>
+        <li>Це ускладнює внутрішню реалізацію.</li>
+        <li>Не вносить поліпшень в логічну композицію.</li>
+      </ol>
+    </section>
+
     <section class="slide" id="slide16">
       <style>
         #slide16 {
@@ -551,7 +645,7 @@
     </section>
 
     <section class="slide" id="slide24">
-      <h2>Other features</h2>
+      <h2>Експерементальні можливості</h2>
       <div class="content">
         <ol>
           <li>Script setup</li>
